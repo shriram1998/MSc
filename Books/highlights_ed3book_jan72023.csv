@@ -1,0 +1,243 @@
+﻿"Content","Page"
+"language is creative and any particular
+context might have never occurred before","41"
+"2 We need the end-symbol to make the bigram grammar a true probability distribution. Without an endsymbol, instead of the sentence probabilities of all sentences summing to one, the sentence probabilities
+for all sentences of a given length would sum to one. This model would define an infinite set of probability
+distributions, with one distribution per sentence length. See Exercise 3.5.","42"
+"Some of the bigram probabilities above encode some facts that we think of as strictly
+syntactic in nature, like the fact that what comes after eat is usually a noun or an
+adjective","44"
+"cultural rather than linguistic","44"
+"when there is sufficient training data","44"
+"to compute trigram probabilities at the very beginning of the sentence,
+we use two pseudo-words for the first trigram (i.e., P(I|<s><s>)","44"
+"e inverse probability of the test set, normalized
+by the number of words","46"
+". We also need to include the end-of-sentence marker
+</s> (but not the beginning-of-sentence marker <s>) in the total count of word tokens N.","46"
+"The perplexity of two language models is only comparable if they
+use identical vocabularies.","47"
+"An (intrinsic) improvement in perplexity does not guarantee an (extrinsic) improvement in the performance of a language processing task like speech recognition","47"
+"In other words, we
+only “back off” to a lower-order n-gram if we have zero evidence for a higher-order
+interpolation n-gram","54"
+"Without loss of generalization, we can represent a document d as a set of features","69"
+"n log
+space, to avoid underflow and increase speed","70"
+"naive Bayes and also logistic regression—
+are called linear classifiers","70"
+"we don’t use unknown word models for naive Bayes","72"
+"Note that the
+results counts need not be 1; the word great has a count of 2 even for binary naive
+Bayes, because it appears in multiple documents.","73"
+"when training data is sparse or not representative of
+the test set, using dense lexicon features instead of sparse individual-word features
+may generalize better","74"
+"class-specific unigram language models","75"
+"Precision measures the percentage of the items that
+the system detected (i.e., the system labeled as positive) that are in fact positive","77"
+"Recall measures the percentage of items actually present in the input that were
+correctly identified by the system.","77"
+"b > 1 favor recall","77"
+"weighs the lower of the two numbers more heavily","78"
+"In macroaveraging, we compute the performance
+microaveraging for each class, and then average over classes. In microaveraging, we collect the decisions for all classes into a single confusion matrix, and then compute precision and
+recall from that table.","78"
+"a microaverage is dominated by the more frequent class","78"
+"a microaverage is dominated by the more frequent class","78"
+"The macroaverage better reflects the
+statistics of the smaller classes, and so is more appropriate when performance on all
+the classes is equally important","78"
+"Naive Bayes is a generative model that makes the bag-of-words assumption
+(position doesn’t matter) and the conditional independence assumption (words
+are conditionally independent of each other given the class)","84"
+"Stochastic gradient descent is an online algorithm that minimizes the loss function
+by computing its gradient after each training example","102"
+"two words are synonymous if they are substitutable for one another in any sentence
+without changing the truth conditions of the sentence","113"
+"relations between word senses (like synonymy) to relations between
+words (like similarity)","113"
+"A semantic frame is a set of words that denote perspectives or
+participants in a particular type of event.","114"
+"Vectors for representing words are called embeddings","115"
+"term-document In a term-document matrix, each row represents a word in the vocabulary and each
+matrixcolumn represents a document from some collection of documents.","116"
+"similar documents had similar vectors","118"
+"similar words have similar vectors","118"
+"The dot product is higher if a vector is longer, with higher values in each dimension.","120"
+"Raw frequency is very skewed
+and not very discriminative.","122"
+"It is a measure of how often two events x and y occur, compared with
+what we would expect if they were independent","124"
+"PMI has the problem of being biased toward infrequent events; very rare words
+tend to have very high PMI values.","125"
+"Positive PMI also cleanly solves the problem of what to do with zero counts, using 0 to replace the
+−¥ from log(0)","125"
+"Laplace smoothing","126"
+"It turns out that dense vectors work better in every NLP task than sparse vectors.","127"
+"“Is
+word w likely to show up near apricot?”","128"
+"self-supervision, avoids the need for
+any sort of hand-labeled supervision signal","128"
+"Skip-gram makes the simplifying assumption that all context
+words are independent, allowing us to just multiply their probabilities","129"
+"For training a binary classifier we also need negative examples. In fact skipgram with negative sampling (SGNS) uses more negative examples than positive
+examples (with the ratio between them set by a parameter k)","130"
+"The noise words are chosen according to their weighted unigram frequency
+pa(w), where a is a weight.","130"
+"rare noise words slightly
+higher probability","131"
+"Given the set of positive and negative training instances, and an initial set of embeddings, the goal of the learning algorithm is to adjust those embeddings to
+• Maximize the similarity of the target word, context word pairs (w;cpos) drawn
+from the positive examples
+• Minimize the similarity of the (w;cneg) pairs from the negative examples","131"
+"stochastic gradient descent","131"
+"t the skip-gram model learns two separate embeddings for each word i:
+the target embedding wi and the context embedding citarget
+dding, stored in two matrices, theembecontextembeddingtarget matrix W and the context matrix C","132"
+"s with the simple count-based methods like tf-idf, the context window size L
+affects the performance of skip-gram embeddings, and experiments often tune the
+parameter L on a devset.","132"
+"Shorter context windows
+tend to lead to representations that are a bit more syntactic","134"
+"semantically
+similar words with the same parts of speech","134"
+"topically related but not similar","134"
+"input units, hidden
+units, and output units","148"
+"a weighted sum of
+its inputs and then applying a non-linearity","148"
+"normalize it to a probability distribution","150"
+"we traditionally don’t count the input layer when numbering layers,
+but do count the output layer","150"
+"Compared to n-gram models, neural language models can handle
+much longer histories, can generalize better over contexts of similar words, and are
+more accurate at word-prediction","155"
+"Using embeddings allows neural language models to generalize better to unseen
+data.","155"
+"Knowing if a named
+entity like Washington is a name of a person, a place, or a university is important to
+many natural language processing tasks like question answering, stance detection,
+or information extraction.","168"
+"Penn tagset distinguishes tense and participles
+on verbs","171"
+"HMMs, CRFs, BERT perform similarly","172"
+"ambiguous words, though accounting for only 14-15% of the vocabulary, are very
+common, and 55-67% of word tokens in running text are ambiguous","172"
+"assigning each token to the class
+it occurred in most often in the training set","172"
+"The most-frequent-tag baseline has an accuracy of about 92%1. The baseline
+thus differs from the state-of-the-art and human ceiling (97%) by only 5%.","173"
+"being a proper noun is a grammatical property of
+these words. But viewed from a semantic perspective, these proper nouns refer to
+different kinds of entities:","173"
+"named entity nition (NER) is to find spans of text that constitute proper names and tag the type of
+recognitionNER the entity.","173"
+"This is a method that allows us
+to treat NER like a word-by-word sequence labeling task, via tags that capture both
+the boundary and the named entity type.","174"
+"In BIO tagging we label any token
+that begins a span of interest with the label B, tokens that occur inside a span are
+tagged with an I, and any tokens outside of any span of interest are labeled O.","174"
+"A Markov chain
+makes a very strong assumption that if we want to predict the future in the sequence,
+all that matters is the current state.","175"
+"the values of arcs leaving a given
+state must sum to 1","175"
+"the probability of a particular state depends
+only on the previous state","176"
+"the probability of an output observation oi depends only on the state that
+produced the observation qi and not on any other states or any other observations","176"
+"Each cell gets the max of the 7
+values from the previous column","182"
+"Part-of-speech taggers are evaluated by the standard metric of accuracy. Named
+entity recognizers are evaluated by recall, precision, and F1 measure.","187"
+"lems with evaluation. For example, a system that labeled Jane but not Jane Villanueva as a person would cause two errors, a false positive for O and a false negative for I-PER. In addition, using entities as the unit of response but words as the unit
+of training means that there is a mismatch between the training and test conditions.","187"
+"lems with evaluation. For example, a system that labeled Jane but not Jane Villanueva as a person would cause two errors, a false positive for O and a false negative for I-PER. In addition, using entities as the unit of response but words as the unit","187"
+", part-of-speech taggers for morphologically rich lan","188"
+"guages need to label words with case and gender information","189"
+"output tag, the prior output tag, the entire input sequence,
+and the current timestep","189"
+"They use the Viterbi algorithm for inference, to
+choose the best sequence of tags, and a version of the Forward-Backward
+algorithm (see Appendix A) for training","189"
+"Chomsky Chomsky normal form (CNF) (Chomsky, 1963) if it is -free and if in addition
+mal formnoreach production is either of the form A ! B C or A ! a.","372"
+"the arguments to the verb prefer are directly linked to it in thedependency structure, while their connection to the main verb is more distant in thephrase-structure tree.","389"
+"However, in languages with more flexible word order, the
+information encoded directly in these grammatical relations is critical since phrasebased constituent syntax provides little help.","390"
+"1. There is a single designated root node that has no incoming arcs.
+2. With the exception of the root node, each vertex has exactly one incoming arc.
+3. There is a unique path from the root node to each vertex in V .","392"
+"An arc from a head to a dependent is said to be
+projective projective if there is a path from the head to every word that lies between the head
+and the dependent in the sentence.","392"
+"no crossing edges","392"
+"Dependency treebanks are created by having human annotators directly generate
+dependency structures for a given corpus, or by hand-correcting the output of an
+automatic parser. A few early treebanks were also based on using a deterministic
+process to translate existing constituent-based treebanks into dependency trees.","393"
+"the stack, an input buffer
+of words or tokens, and a set of relations representing a dependency tree","395"
+"Choose LEFTARC if it produces a correct head-dependent relation given the
+reference parse and the current configuration,
+• Otherwise, choose RIGHTARC if (1) it produces a correct head-dependent relation given the reference parse and (2) all of the dependents of the word at
+the top of the stack have already been assigned,
+• Otherwise, choose SHIFT.","397"
+"To recap, we derive appropriate training instances consisting of configurationtransition pairs from a treebank by simulating the operation of a parser in the context of a reference dependency tree. We can deterministically record correct parser","399"
+"Word forms, lemmas, parts of speech, the
+head, and the dependency relation to the head.","399"
+"Given the training data and features, any classifier, like multinomial logistic regression or support vector machines, can be used.","400"
+"assert rightward relations much sooner
+than in the arc standard approach","400"
+"The LEFTARC and RIGHTARC operators are applied to the top of the stack and
+the front of the input buffer","401"
+"the while loop continues as long as
+there are non-final states on the agenda","402"
+"transition-based methods have trouble when the heads are
+very far from the dependents (McDonald and Nivre, 2011). Graph-based methods
+avoid this difficulty by scoring entire trees, rather than relying on greedy local decisions. Furthermore, unlike transition-based approaches, graph-based parsers can","403"
+"relative weights of the
+edges entering each vertex that matters","404"
+"what we need to eliminate the cycle. The edge of the maximum spanning tree directed towards the vertex representing the collapsed cycle tells us which edge to
+delete to eliminate the cycle.","405"
+"e inference-based learning combined with the perceptron learning rule","407"
+"Otherwise, we
+find those features in the incorrect parse that are not present in the reference parse
+and we lower their weights by a small amount based on the learning rate.","407"
+"Otherwise, we
+find those features in the incorrect parse that are not present in the reference parse
+and we lower their weights by a small amount based on the learning rate","407"
+"being trained to predict with binary softmax the
+probability of an edge existing between two words","409"
+"Treebanks provide the data needed to train these systems. Dependency treebanks can be created directly by human annotators or via automatic transformation from phrase-structure treebanks.","410"
+"Verifiability is a system’s ability to compare
+the state of affairs described by a representation to the state of affairs in some world
+as modeled in a knowledge base.","414"
+"The answer is a model. A model is a formal construct that stands for the particular state of affairs in the world. Expressions in a meaning representation language","416"
+"Each element of the non-logical vocabulary must have a denotation in the model,
+meaning that every element corresponds to a fixed, well-defined part of the model.","417"
+"it encodes the category
+membership of Maharani.","420"
+"l-notation provides a way to incrementally gather
+arguments to a predicate when they do not all appear together as daughters of the
+predicate in a parse tree.","423"
+"The forward chaining approach has the advantage that facts will be present in
+the knowledge base when needed, because, in a sense all inference is performed in
+advance.","425"
+"The disadvantage of this approach
+is that facts that will never be needed may be inferred and stored.","425"
+"m known consequents to
+unknown antecedents","426"
+"‘structured polysemy’ for polysemy with sense relations","465"
+"A sense (or word sense) is a discrete representation of one aspect of the meaning of
+a word.","466"
+"embedding, a point
+in semantic space","466"
+"sentence embeddings","467"
+"two senses discrete if they have independent truth conditions, different syntactic behavior, and independent sense relations, or if they exhibit antagonistic meanings.","467"
+"truth conditions","467"
+"conjoin two uses of a word in a single sentence","467"
+"automatically distinguishing synonyms
+from antonyms can be difficult.","468"
