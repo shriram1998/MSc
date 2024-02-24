@@ -4,7 +4,7 @@ import java.io.FileReader;
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 import net.sf.jsqlparser.statement.Statement;
 import net.sf.jsqlparser.statement.select.Select;
-
+import ed.inf.adbs.lightdb.metadata.Catalog;
 /**
  * Lightweight in-memory database system
  *
@@ -22,6 +22,8 @@ public class LightDB {
 		String inputFile = args[1];
 		String outputFile = args[2];
 
+		// Initialize the Catalog with command-line arguments
+		Catalog.initialize(databaseDir);
 		// Just for demonstration, replace this function call with your logic
 		parsingExample(inputFile);
 	}
