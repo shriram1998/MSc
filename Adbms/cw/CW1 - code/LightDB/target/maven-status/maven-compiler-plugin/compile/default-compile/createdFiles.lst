@@ -1,1 +1,11 @@
 ed\inf\adbs\lightdb\LightDB.class
+ed\inf\adbs\lightdb\metadata\Catalog$TableSchema.class
+ed\inf\adbs\lightdb\metadata\Catalog.class
+ed\inf\adbs\lightdb\core\executor\operators\SelectOperator.class
+ed\inf\adbs\lightdb\core\parser\SQLParser.class
+ed\inf\adbs\lightdb\core\parser\SQLParser$2.class
+ed\inf\adbs\lightdb\core\executor\operators\Operator.class
+ed\inf\adbs\lightdb\core\parser\SQLParser$1.class
+ed\inf\adbs\lightdb\model\Tuple.class
+ed\inf\adbs\lightdb\core\executor\ExpressionEvaluator.class
+ed\inf\adbs\lightdb\core\executor\operators\ScanOperator.class

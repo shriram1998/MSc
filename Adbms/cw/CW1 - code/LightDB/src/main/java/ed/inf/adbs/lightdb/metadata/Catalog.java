@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Catalog {
@@ -59,6 +60,20 @@ public class Catalog {
     // Retrieves schema information for a specific table
     public TableSchema getTableSchema(String tableName) {
         return tables.get(tableName);
+    }
+
+    public Map<String, Integer> getColumnMapping(String tableName) {
+        TableSchema schema = tables.get(tableName);
+        if (schema == null) {
+            throw new IllegalArgumentException("Table " + tableName + " does not exist in the catalog.");
+        }
+
+        Map<String, Integer> columnMapping = new HashMap<>();
+        List<String> columnNames = List.of(schema.columns);
+        for (int i = 0; i < columnNames.size(); i++) {
+            columnMapping.put(columnNames.get(i), i);
+        }
+        return columnMapping;
     }
 
     public String getTableFilePath(String tableName) {

@@ -1,10 +1,13 @@
 package ed.inf.adbs.lightdb;
 
 import java.io.FileReader;
+
+import ed.inf.adbs.lightdb.core.parser.SQLParser;
 import net.sf.jsqlparser.parser.CCJSqlParserUtil;
 import net.sf.jsqlparser.statement.Statement;
 import net.sf.jsqlparser.statement.select.Select;
 import ed.inf.adbs.lightdb.metadata.Catalog;
+import ed.inf.adbs.lightdb.core.parser.SQLParser;
 /**
  * Lightweight in-memory database system
  *
@@ -41,6 +44,8 @@ public class LightDB {
 			if (statement != null) {
 				System.out.println("Read statement: " + statement);
 				Select select = (Select) statement;
+				SQLParser sqlparser=new SQLParser();
+				statement.accept(sqlparser.statementVisitor);
 				System.out.println("Select body is " + select.getSelectBody());
 			}
 		} catch (Exception e) {

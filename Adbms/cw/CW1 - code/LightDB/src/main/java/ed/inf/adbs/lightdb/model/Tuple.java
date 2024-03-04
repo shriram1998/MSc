@@ -7,13 +7,13 @@ import java.util.Arrays;
  * A tuple corresponds to a row of data in a table.
  */
 public class Tuple {
-    private final Object[] fields;
+    private final int[] fields;
 
     /**
      * Constructs a tuple with the specified fields.
      * @param fields The fields of the tuple.
      */
-    public Tuple(Object... fields) {
+    public Tuple(int[] fields) {
         this.fields = fields;
     }
 
@@ -23,7 +23,7 @@ public class Tuple {
      * @return The value of the field.
      */
     public Object getField(int index) {
-        return fields[index];
+        return this.fields[index];
     }
 
     /**

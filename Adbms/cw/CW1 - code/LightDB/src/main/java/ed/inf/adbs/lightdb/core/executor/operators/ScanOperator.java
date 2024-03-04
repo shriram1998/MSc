@@ -15,7 +15,7 @@ public class ScanOperator extends Operator {
         this.tableName = tableName;
         initializeReader();
     }
-
+    //(doubt)cannot use this function as scan could be used for multiple tables during join
     private void initializeReader() throws IOException {
         // Assuming a Catalog class exists that can provide the file path for a table name
         String dataFilePath = Catalog.getInstance().getTableFilePath(tableName);
@@ -27,7 +27,14 @@ public class ScanOperator extends Operator {
         String line = reader.readLine();
         if (line != null) {
             // Assuming a Tuple class exists that can parse a line of text into a tuple
-            return new Tuple(line);
+            String[] numberStrings = line.split(",");
+            // Create an integer array to store the results
+            int[] intArray = new int[numberStrings.length];
+            // Convert each string to an integer and store it in the array
+            for (int i = 0; i < numberStrings.length; i++) {
+                intArray[i] = Integer.parseInt(numberStrings[i].trim());
+            }
+            return new Tuple(intArray);
         }
         return null; // End of file reached
     }
