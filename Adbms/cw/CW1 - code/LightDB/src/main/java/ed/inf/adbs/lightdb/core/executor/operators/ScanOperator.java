@@ -6,6 +6,7 @@ import ed.inf.adbs.lightdb.model.Tuple;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class ScanOperator extends Operator {
     private final String tableName;
@@ -34,6 +35,7 @@ public class ScanOperator extends Operator {
             for (int i = 0; i < numberStrings.length; i++) {
                 intArray[i] = Integer.parseInt(numberStrings[i].trim());
             }
+//            System.out.println("Returning from scan"+ Arrays.toString(intArray));
             return new Tuple(intArray);
         }
         return null; // End of file reached

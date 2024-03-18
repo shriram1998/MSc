@@ -2,6 +2,7 @@ package ed.inf.adbs.lightdb.core.parser;
 
 import ed.inf.adbs.lightdb.core.executor.ExpressionEvaluator;
 import ed.inf.adbs.lightdb.core.executor.operators.Operator;
+import ed.inf.adbs.lightdb.core.executor.operators.ProjectOperator;
 import ed.inf.adbs.lightdb.core.executor.operators.ScanOperator;
 import ed.inf.adbs.lightdb.core.executor.operators.SelectOperator;
 import ed.inf.adbs.lightdb.metadata.Catalog;
@@ -34,25 +35,30 @@ public class SQLParser {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            Operator rootOperator = scanOperator;y
+            Operator rootOperator = scanOperator;
 
 //            ExpressionVisitorAdapter expressionVisitorAdapter=new ExpressionEvaluator(catalog.getColumnMapping(tableName));
 //            for (SelectItem item : plainSelect.getSelectItems()) {
 //                item.accept(expressionVisitorAdapter);
 //            }
 
-            // Visit the where clause
-            if (plainSelect.getWhere() != null) {
+            if (plainSelect.getSelectItems()!=null) {
+                if(plainSelect.getWhere() != null){
+                    SelectOperator selectOperator=new SelectOperator(rootOperator,plainSelect.getWhere(),catalog.getColumnMapping(tableName));
+                    rootOperator=new ProjectOperator(selectOperator,plainSelect.getSelectItems(),catalog.getColumnMapping(tableName));
+                }else{
+                    rootOperator=new ProjectOperator(rootOperator,plainSelect.getSelectItems(),catalog.getColumnMapping(tableName));
+                }
+            }
+            else if (plainSelect.getWhere() != null) {
                 rootOperator=new SelectOperator(rootOperator,plainSelect.getWhere(),catalog.getColumnMapping(tableName));
             }
 
-            if (rootOperator != null) {
-                // Assuming Operator class has an execute or similar method
-                try {
-                    rootOperator.dump(System.out);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+            // Assuming Operator class has an execute or similar method
+            try {
+                rootOperator.dump(System.out);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     };

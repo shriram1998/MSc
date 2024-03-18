@@ -5,6 +5,7 @@ import ed.inf.adbs.lightdb.model.Tuple;
 import net.sf.jsqlparser.expression.Expression;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
 
 public class SelectOperator extends Operator {
@@ -24,6 +25,7 @@ public class SelectOperator extends Operator {
         ExpressionEvaluator evaluator = new ExpressionEvaluator(schema);
         while (tuple != null) {
             if (evaluator.evaluate(whereCondition, tuple)) {
+//                System.out.println("Returning from select"+ tuple);
                 return tuple; // Tuple matches the condition
             }
             tuple = childOperator.getNextTuple(); // Fetch next and repeat

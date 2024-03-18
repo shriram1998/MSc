@@ -22,8 +22,19 @@ public class Tuple {
      * @param index The index of the field to retrieve.
      * @return The value of the field.
      */
-    public Object getField(int index) {
+    public Integer getField(int index) {
+
         return this.fields[index];
+    }
+
+    /**
+     * Retrieves the value of a field at the specified index.
+     * @param index The index of the field to retrieve.
+     * @return The value of the field.
+     */
+    public int[] getTuple() {
+
+        return this.tuple;
     }
 
     /**

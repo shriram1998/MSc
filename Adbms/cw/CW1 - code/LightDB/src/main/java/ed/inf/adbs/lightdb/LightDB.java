@@ -46,7 +46,7 @@ public class LightDB {
 				Select select = (Select) statement;
 				SQLParser sqlparser=new SQLParser();
 				statement.accept(sqlparser.statementVisitor);
-				System.out.println("Select body is " + select.getSelectBody());
+//				System.out.println("Select body is " + select.getSelectBody());
 			}
 		} catch (Exception e) {
 			System.err.println("Exception occurred during parsing");

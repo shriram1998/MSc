@@ -1,4 +1,5 @@
 ed\inf\adbs\lightdb\LightDB.class
+ed\inf\adbs\lightdb\core\executor\operators\ProjectOperator.class
 ed\inf\adbs\lightdb\metadata\Catalog$TableSchema.class
 ed\inf\adbs\lightdb\metadata\Catalog.class
 ed\inf\adbs\lightdb\core\executor\operators\SelectOperator.class

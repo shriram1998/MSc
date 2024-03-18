@@ -121,6 +121,7 @@ public class ExpressionEvaluator extends ExpressionVisitorAdapter {
         // Fetch the column value from the tuple and store it for comparison
 //        System.out.println("Index"+index);
 //        System.out.println("Mapping"+columnMapping);
+//        System.out.println("Tuple"+currentTuple);
 //        System.out.println("Col Field:"+currentTuple.getField(index));
         lastEvaluatedValue = (int) currentTuple.getField(index);
     }
