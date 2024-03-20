@@ -25,7 +25,10 @@ public class ScanOperator extends Operator{
             e.printStackTrace();
         }
     }
-
+    /**
+     * Return the next tuple
+     * @return next tuple
+     */
     @Override
     public Tuple getNextTuple(){
         try{
@@ -42,7 +45,9 @@ public class ScanOperator extends Operator{
             return null;
         }
     }
-
+    /**
+     * Reset the reader
+     */
     @Override
     public void reset(){
         try{
@@ -51,5 +56,14 @@ public class ScanOperator extends Operator{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Returns table name (name or alias)
+     * @return table name
+     */
+    public String getTableName() {
+
+        return tableName;
     }
 }

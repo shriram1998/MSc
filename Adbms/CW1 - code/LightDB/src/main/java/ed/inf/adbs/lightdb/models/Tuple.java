@@ -50,7 +50,7 @@ public class Tuple {
         for(int i=0;i<tuple.length;++i){
             sb.append(tuple[i]);
             if(i!=tuple.length-1){
-                sb.append(",");
+                sb.append(", ");
             }
         }
         return sb.toString();
@@ -73,6 +73,7 @@ public class Tuple {
      * @return Tuple schema
      */
     public List<String> getTupleSchema() {
+
         return this.tupleSchema;
     }
 

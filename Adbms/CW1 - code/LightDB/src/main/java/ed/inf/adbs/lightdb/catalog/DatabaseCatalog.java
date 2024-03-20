@@ -12,7 +12,7 @@ public class DatabaseCatalog {
     private static String schemaFilePath="";
     private static String outputFilePath="";
     private static HashMap<String, String> aliasMap = new HashMap<>();
-    private static Map<String, TableSchema> tables;
+    private static Map<String, TableSchema> tables=new HashMap<>();
 
     /**
      * Returns the Catalog instance, ensuring that there is only instance
@@ -98,9 +98,9 @@ public class DatabaseCatalog {
         String[] split = column.split("\\.");
         if(!aliasMap.isEmpty()){
             String tableName=aliasMap.get(split[0]);
-            return tables.get(tableName).getColumnMapping().get(split[1]);
+            return tables.get(tableName).getColumnMapping().get(tableName+"."+split[1]);
         }else{
-            return tables.get(split[0]).getColumnMapping().get(split[1]);
+            return tables.get(split[0]).getColumnMapping().get(column);
         }
     }
 
@@ -124,7 +124,7 @@ public class DatabaseCatalog {
      * Initialize alias hashmap
      * @param aliasMap hashmap of alias
      */
-    public static void setAliasMao(HashMap<String, String> aliasMap) {
+    public static void setAliasMap(HashMap<String, String> aliasMap) {
 
         DatabaseCatalog.aliasMap = aliasMap;
     }
