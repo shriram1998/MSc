@@ -5,6 +5,10 @@ import ed.inf.adbs.lightdb.models.Tuple;
 
 import java.io.*;
 
+/**
+ * Abstract operator class that describes the interface
+ * that relational algebra operators should implement
+ */
 public abstract class Operator {
     /**
      * Gets the next tuple from the operator.

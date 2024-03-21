@@ -1,9 +1,7 @@
 package ed.inf.adbs.lightdb.statements;
 
 import ed.inf.adbs.lightdb.catalog.DatabaseCatalog;
-import ed.inf.adbs.lightdb.statements.Operators.Operator;
-import ed.inf.adbs.lightdb.statements.Operators.ScanOperator;
-import ed.inf.adbs.lightdb.statements.Operators.SelectOperator;
+import ed.inf.adbs.lightdb.statements.Operators.*;
 import net.sf.jsqlparser.expression.Alias;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
@@ -12,6 +10,7 @@ import net.sf.jsqlparser.statement.select.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Class that parses select statement, creates and executes the query plan
@@ -88,18 +87,21 @@ public class SelectStatement {
         if(rootExpression!=null){
             rootOperator=new SelectOperator((ScanOperator) rootOperator, rootExpression);
         }
-        rootOperator.dump();
         //create join operators for other tables
-//        for(int i=1;i<tables.size();i++){
-//            String table=tables.get(i);
-//            Operator operator=new ScanOperator(rootTable);
-//            Expression selectExpression= selectConditionsMap.get(table);
-//            if(selectExpression!=null){
-//                operator=new SelectOperator((ScanOperator) operator, selectExpression);
-//            }
-//            Expression joinExpression=joinConditionsMap.get(table);
-//            operator=new JoinOperator(rootOperator,operator, joinExpression);
-//        }
+        for(int i=1;i<tables.size();i++){
+            String table=tables.get(i);
+            Operator operator=new ScanOperator(table);
+            Expression selectExpression= selectConditionsMap.get(table);
+            if(selectExpression!=null){
+                operator=new SelectOperator((ScanOperator) operator, selectExpression);
+            }
+            Expression joinExpression=joinConditionsMap.get(table);
+            rootOperator=new JoinOperator(rootOperator, operator, joinExpression);
+        }
+        if(!Objects.equals(selectItems.toString(), "[*]")){
+            rootOperator=new ProjectOperator(rootOperator, selectItems);
+        }
+        rootOperator.dump();
     }
     /**
      * Returns the position of table lastly added to the tables list
@@ -188,7 +190,7 @@ public class SelectStatement {
      */
     private Expression joinWhereExpression(List<Expression> whereExpressionList){
         //static condition without any table involvement
-        if(whereExpressionList.size()==0){
+        if(whereExpressionList.isEmpty()){
             return null;
         }
         Expression joinedExpression=whereExpressionList.get(0);

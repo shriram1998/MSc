@@ -1,7 +1,7 @@
 package ed.inf.adbs.lightdb.statements.Evaluators;
 
-import ed.inf.adbs.lightdb.models.Tuple;
 import ed.inf.adbs.lightdb.catalog.DatabaseCatalog;
+import ed.inf.adbs.lightdb.models.Tuple;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
@@ -11,28 +11,36 @@ import net.sf.jsqlparser.schema.Column;
 import net.sf.jsqlparser.util.deparser.ExpressionDeParser;
 
 import java.util.Stack;
+
 /**
  * Custom expression deparser class that inherits ExpressionDeParser
- * and also implement an evaluate method to evaluate the select condition
- * on a tuple
+ * and also implement an evaluate method to evaluate the join condition on two tuples
  */
-public class SelectExpressionEvaluator extends ExpressionDeParser{
-    private Tuple tuple;
+public class JoinExpressionEvaluator extends ExpressionDeParser {
+    private Tuple leftTuple;
+    private Tuple rightTuple;
     private Expression expression;
     Stack<Boolean> evaluationResult = new Stack<>(); // Stores the result of expression evaluation
     Stack<Long> lastValueStack = new Stack<>(); //store last visited value
     /**
-     * Constructor of SelectExpressionEvaluator
-     * @param whereExpression Where condition expression
+     * Constructor of JointExpressionEvaluator
+     * @param whereExpression Where condition expression related to join
      */
-    public SelectExpressionEvaluator(Expression whereExpression) {
+    public JoinExpressionEvaluator(Expression whereExpression) {
         expression=whereExpression;
     }
 
-    public Boolean evaluate(Tuple currentTuple) {
+    /**
+     * Returns the result of the expression for the left and right tuple
+     * that are compared
+     * @param leftValue left tuple
+     * @param rightValue right tuple
+     */
+    public Boolean evaluate(Tuple leftValue, Tuple rightValue) {
         evaluationResult = new Stack<>();
         lastValueStack = new Stack<>();
-        tuple=currentTuple;
+        leftTuple=leftValue;
+        rightTuple=rightValue;
         expression.accept(this);
         return evaluationResult.pop();
     }
@@ -41,7 +49,11 @@ public class SelectExpressionEvaluator extends ExpressionDeParser{
     public void visit(Column column) {
         super.visit(column);
         int index = DatabaseCatalog.getColumnPosition(column.toString());
-        lastValueStack.push(tuple.getTupleField(index));
+        if(leftTuple.getTupleSchema().contains(column.toString())){
+            lastValueStack.push(leftTuple.getTupleField(index));
+        } else{
+            lastValueStack.push(rightTuple.getTupleField(index));
+        }
     }
 
     @Override
@@ -118,4 +130,5 @@ public class SelectExpressionEvaluator extends ExpressionDeParser{
         boolean leftResult = evaluationResult.pop();
         evaluationResult.push(leftResult || rightResult);
     }
+
 }

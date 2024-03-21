@@ -7,6 +7,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Scan operator class
+ */
 public class ScanOperator extends Operator{
     private String tableName;
     private String tableFilePath;

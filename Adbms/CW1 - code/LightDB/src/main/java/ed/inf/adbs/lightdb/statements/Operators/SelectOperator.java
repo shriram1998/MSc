@@ -2,13 +2,11 @@ package ed.inf.adbs.lightdb.statements.Operators;
 
 import ed.inf.adbs.lightdb.models.Tuple;
 import ed.inf.adbs.lightdb.statements.Evaluators.SelectExpressionEvaluator;
-import ed.inf.adbs.lightdb.statements.SelectStatement;
-import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.expression.Expression;
 
-import java.io.IOException;
-import java.util.Map;
-
+/**
+ * Select operator class
+ */
 public class SelectOperator extends Operator{
     private ScanOperator scanOperator;
     private Expression whereCondition;

@@ -1,5 +1,6 @@
 package ed.inf.adbs.lightdb.models;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,26 @@ public class Tuple {
     }
 
     /**
+     * Constructs a tuple which is a combination of two tuples
+     * @param leftTuple left tuple
+     * @param rightTuple right tuple
+     */
+    public Tuple(Tuple leftTuple, Tuple rightTuple) {
+        int leftTupleSize=leftTuple.getSize();
+        tuple = new long[leftTupleSize+rightTuple.getSize()];
+        for(int i=0;i<tuple.length;i++){
+            if(i<leftTupleSize){ //fill the left tuple fields in the result tuple
+                tuple[i]=leftTuple.getTupleField(i);
+            } else{
+                tuple[i]= rightTuple.getTupleField(i-leftTupleSize);
+            }
+        }
+        //create new schema which is a combination of left and right tuple schema
+        tupleSchema=new ArrayList<>(leftTuple.getTupleSchema());
+        tupleSchema.addAll(rightTuple.getTupleSchema());
+    }
+
+    /**
      * Retrieves the value of a tuple at the specified index
      * @param index The index of the field to retrieve
      * @return The value of the field
@@ -33,11 +54,11 @@ public class Tuple {
     }
 
     /**
-     * Retrieves the entire tuple
-     * @return Tuple array
+     * Returns size of the tuple
+     * @return tuple size
      */
-    public long[] getTuple() {
-        return this.tuple;
+    public int getSize() {
+        return tuple.length;
     }
 
     /**
@@ -57,15 +78,16 @@ public class Tuple {
     }
 
     /**
-     * Retrieves the schema of a tuple field value
-     * @param fieldValue The field value of the tuple
-     * @return The corresponding column name
+     * Return the position of the attribute
+     * @param attributeName attribute name
+     * @return index position of the attribute
      */
-    public long getFieldPositionByValue(String fieldValue) {
-        if(Objects.equals(fieldValue, "*")){
-            return -1;
+    public int getAttributeIndex(String attributeName) {
+        if(Objects.equals(attributeName, "*")){
+            return -1; //Select *
+        } else{
+            return this.tupleSchema.indexOf(attributeName);
         }
-        return this.tupleSchema.indexOf(fieldValue);
     }
 
     /**
@@ -73,8 +95,6 @@ public class Tuple {
      * @return Tuple schema
      */
     public List<String> getTupleSchema() {
-
         return this.tupleSchema;
     }
-
 }

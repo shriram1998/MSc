@@ -2,6 +2,7 @@ package ed.inf.adbs.lightdb.catalog;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Singleton catalog class to store database schema, paths and data
@@ -41,7 +42,7 @@ public class DatabaseCatalog {
                 String tableName = parts[0];
                 String[] columns = new String[parts.length - 1];
                 for (int i = 1; i < parts.length; ++i)  {
-                    columnMapping.put(parts[0] + "." + parts[i], i-1);
+                    columnMapping.put(tableName + "." + parts[i], i-1);
                     columns[i-1]=parts[i];
                 }
                 String dataFilePath = dataDirectoryPath + File.separator + tableName + ".csv";
@@ -79,9 +80,14 @@ public class DatabaseCatalog {
     public static List<String> getTableSchema(String table) {
         if(!aliasMap.isEmpty() && aliasMap.containsKey(table)){
             String tableName=aliasMap.get(table);
-            return tables.get(tableName).getColumns();
+            List<String> plainColumns=tables.get(tableName).getColumns();
+            return plainColumns.stream()
+                    .map(s -> table+"."+s )
+                    .collect(Collectors.toList()); //columns with table name alias Eg: S.A
         }else{
-            return tables.get(table).getColumns();
+            return tables.get(table).getColumns().stream()
+                    .map(s -> table+"."+s )
+                    .collect(Collectors.toList()); //columns with table name Eg: Sailors.A
         }
     }
 
