@@ -62,6 +62,9 @@ public class SelectStatement {
                 List<String> tablesInvolved=parseTablesInvolved(expression);
                 int lastTable=getLastTablePosition(tablesInvolved);
                 String tableName=tables.get(lastTable);
+                /*
+                if two tables are involved, then it is a join condition else a select condition
+                 */
                 if(tablesInvolved.size()==2){
                     whereJoinOnly.get(tableName).add(expression);
                 } else{

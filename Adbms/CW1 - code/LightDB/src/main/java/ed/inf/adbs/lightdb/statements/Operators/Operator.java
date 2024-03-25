@@ -4,6 +4,8 @@ import ed.inf.adbs.lightdb.catalog.DatabaseCatalog;
 import ed.inf.adbs.lightdb.models.Tuple;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Abstract operator class that describes the interface
@@ -37,5 +39,36 @@ public abstract class Operator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Dump method to dump all the tuples at the same time
+     * that is used with queries containing order by
+     */
+    public void dump(List<Tuple> tuples){
+        try{
+            String outputFilePath= DatabaseCatalog.getOutputPath();
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, true));
+            for(Tuple tuple:tuples) {
+                String strToWrite = tuple.toString() + "\n";
+                writer.write(strToWrite);
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Returns all output tuples of an operator as a list (to support blocking operators like order by)
+     * @return list of all output tuples
+     */
+    public List<Tuple> getAllTuples() {
+        List<Tuple> allTuples=new ArrayList<>();
+        Tuple tuple;
+        while ((tuple = getNextTuple()) != null) {
+            allTuples.add(tuple);
+        }
+        return allTuples;
     }
 }
