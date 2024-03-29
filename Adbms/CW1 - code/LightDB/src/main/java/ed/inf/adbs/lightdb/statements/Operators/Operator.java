@@ -14,25 +14,27 @@ import java.util.List;
 public abstract class Operator {
     /**
      * Gets the next tuple from the operator.
+     * 
      * @return The next tuple if available, or null if there are no more tuples.
      */
     public abstract Tuple getNextTuple();
 
     /**
-     * Resets the operator to its initial state, allowing it to start returning tuples from the beginning.
+     * Resets the operator to its initial state, allowing it to start returning
+     * tuples from the beginning.
      */
     public abstract void reset();
 
     /**
      * Repeatedly calls getNextTuple() until the next tuple is null
      */
-    public void dump(){
+    public void dump() {
         Tuple tuple;
-        String outputFilePath= DatabaseCatalog.getOutputPath();
-        try{
+        String outputFilePath = DatabaseCatalog.getOutputPath();
+        try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, true));
             while ((tuple = getNextTuple()) != null) {
-                String strToWrite=tuple.toString()+"\n";
+                String strToWrite = tuple.toString() + "\n";
                 writer.write(strToWrite);
             }
             writer.close();
@@ -45,11 +47,15 @@ public abstract class Operator {
      * Dump method to dump all the tuples at the same time
      * that is used with queries containing order by
      */
-    public void dump(List<Tuple> tuples){
-        try{
-            String outputFilePath= DatabaseCatalog.getOutputPath();
+    public void dump(List<Tuple> tuples) {
+        try {
+            String outputFilePath = DatabaseCatalog.getOutputPath();
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, true));
-            for(Tuple tuple:tuples) {
+            if (tuples.isEmpty()) {
+                writer.close();
+                return;
+            }
+            for (Tuple tuple : tuples) {
                 String strToWrite = tuple.toString() + "\n";
                 writer.write(strToWrite);
             }
@@ -60,11 +66,13 @@ public abstract class Operator {
     }
 
     /**
-     * Returns all output tuples of an operator as a list (to support blocking operators like order by)
+     * Returns all output tuples of an operator as a list (to support blocking
+     * operators like order by)
+     * 
      * @return list of all output tuples
      */
     public List<Tuple> getAllTuples() {
-        List<Tuple> allTuples=new ArrayList<>();
+        List<Tuple> allTuples = new ArrayList<>();
         Tuple tuple;
         while ((tuple = getNextTuple()) != null) {
             allTuples.add(tuple);

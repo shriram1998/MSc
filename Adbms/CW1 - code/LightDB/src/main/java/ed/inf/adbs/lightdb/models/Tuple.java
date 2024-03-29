@@ -1,9 +1,8 @@
 package ed.inf.adbs.lightdb.models;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import ed.inf.adbs.lightdb.catalog.DatabaseCatalog;
+
+import java.util.*;
 
 /**
  * Represents a tuple in the LightDB system
@@ -11,7 +10,7 @@ import java.util.Objects;
  * Implements methods to handle tuple array and metadata of tuple that is Column names
  */
 public class Tuple {
-    private final long[] tuple;
+    private final int[] tuple;
     private final List<String> tupleSchema;
 
     /**
@@ -19,7 +18,7 @@ public class Tuple {
      * @param fields The fields of the tuple
      * @param schema The schema of the tuple
      */
-    public Tuple(long[] fields, List<String> schema) {
+    public Tuple(int[] fields, List<String> schema) {
         this.tuple = fields;
         this.tupleSchema=schema;
     }
@@ -31,17 +30,26 @@ public class Tuple {
      */
     public Tuple(Tuple leftTuple, Tuple rightTuple) {
         int leftTupleSize=leftTuple.getSize();
-        tuple = new long[leftTupleSize+rightTuple.getSize()];
-        for(int i=0;i<tuple.length;i++){
+        this.tuple = new int[leftTupleSize+rightTuple.getSize()];
+        for(int i=0;i<this.tuple.length;i++){
             if(i<leftTupleSize){ //fill the left tuple fields in the result tuple
-                tuple[i]=leftTuple.getTupleField(i);
+                this.tuple[i]=leftTuple.getTupleField(i);
             } else{
-                tuple[i]= rightTuple.getTupleField(i-leftTupleSize);
+                this.tuple[i]= rightTuple.getTupleField(i-leftTupleSize);
             }
         }
         //create new schema which is a combination of left and right tuple schema
-        tupleSchema=new ArrayList<>(leftTuple.getTupleSchema());
-        tupleSchema.addAll(rightTuple.getTupleSchema());
+        this.tupleSchema=new ArrayList<>(leftTuple.getTupleSchema());
+        this.tupleSchema.addAll(rightTuple.getTupleSchema());
+    }
+
+    /**
+     * Returns the tuple
+     *
+     * @return tuple
+     */
+    public int[] getTuple() {
+        return this.tuple;
     }
 
     /**
@@ -49,7 +57,7 @@ public class Tuple {
      * @param index The index of the field to retrieve
      * @return The value of the field
      */
-    public long getTupleField(int index) {
+    public int getTupleField(int index) {
         return this.tuple[index];
     }
 
@@ -58,7 +66,7 @@ public class Tuple {
      * @return tuple size
      */
     public int getSize() {
-        return tuple.length;
+        return this.tuple.length;
     }
 
     /**
@@ -68,9 +76,9 @@ public class Tuple {
     @Override
     public String toString() {
         StringBuilder sb=new StringBuilder();
-        for(int i=0;i<tuple.length;++i){
-            sb.append(tuple[i]);
-            if(i!=tuple.length-1){
+        for(int i=0;i<this.tuple.length;i++){
+            sb.append(this.tuple[i]);
+            if(i!=this.tuple.length-1){
                 sb.append(", ");
             }
         }
@@ -86,7 +94,14 @@ public class Tuple {
         if(Objects.equals(attributeName, "*")){
             return -1; //Select *
         } else{
-            return this.tupleSchema.indexOf(attributeName);
+            String[] split=attributeName.split("\\.");
+            HashMap<String, String> aliasMap = DatabaseCatalog.getAliasMap();
+            if(!aliasMap.isEmpty()){
+                String tableName=aliasMap.get(split[0]);
+                return this.tupleSchema.indexOf(tableName+"."+split[1]);
+            }else{
+                return this.tupleSchema.indexOf(attributeName);
+            }
         }
     }
 

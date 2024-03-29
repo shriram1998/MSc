@@ -10,52 +10,57 @@ import java.io.IOException;
 /**
  * Scan operator class
  */
-public class ScanOperator extends Operator{
+public class ScanOperator extends Operator {
     private String tableName;
     private String tableFilePath;
     private BufferedReader reader;
+
     /**
      * Constructor class to initialize reader
+     * 
      * @param table table name or alias
      */
-    public ScanOperator(String table){
-        tableName = table;
-        tableFilePath=DatabaseCatalog.getTableFilePath(table);
+    public ScanOperator(String table) {
+        this.tableName = table;
+        this.tableFilePath = DatabaseCatalog.getTableFilePath(table);
         String dataFilePath = DatabaseCatalog.getTableFilePath(tableName);
-        try{
-            reader = new BufferedReader(new FileReader(dataFilePath));
+        try {
+            this.reader = new BufferedReader(new FileReader(dataFilePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     /**
      * Return the next tuple
+     * 
      * @return next tuple
      */
     @Override
-    public Tuple getNextTuple(){
-        try{
-            String line = reader.readLine();
-            if (line == null) return null;
+    public Tuple getNextTuple() {
+        try {
+            String line = this.reader.readLine();
+            if (line == null)
+                return null;
             String[] split = line.split(",");
-            long[] values = new long[split.length];
+            int[] values = new int[split.length];
             for (int i = 0; i < split.length; i++) {
                 values[i] = Integer.parseInt(split[i].trim());
             }
-//            System.out.println("Returning from scan"+ Arrays.toString(intArray));
-            return new Tuple(values, DatabaseCatalog.getTableSchema(tableName));
+            return new Tuple(values, DatabaseCatalog.getTableSchema(this.tableName));
         } catch (IOException e) {
             return null;
         }
     }
+
     /**
      * Reset the reader
      */
     @Override
-    public void reset(){
-        try{
-            reader.close();
-            reader = new BufferedReader(new FileReader(tableFilePath));
+    public void reset() {
+        try {
+            this.reader.close();
+            this.reader = new BufferedReader(new FileReader(this.tableFilePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,10 +68,10 @@ public class ScanOperator extends Operator{
 
     /**
      * Returns table name (name or alias)
+     * 
      * @return table name
      */
     public String getTableName() {
-
-        return tableName;
+        return this.tableName;
     }
 }

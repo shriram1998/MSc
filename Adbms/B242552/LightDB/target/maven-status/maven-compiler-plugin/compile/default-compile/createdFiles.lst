@@ -1,0 +1,17 @@
+ed\inf\adbs\lightdb\statements\Operators\DuplicateEliminationOperator.class
+ed\inf\adbs\lightdb\LightDB.class
+ed\inf\adbs\lightdb\statements\Operators\SortOperator$TupleComparator.class
+ed\inf\adbs\lightdb\statements\Operators\SelectOperator.class
+ed\inf\adbs\lightdb\statements\Operators\SortOperator.class
+ed\inf\adbs\lightdb\statements\Evaluators\JoinExpressionEvaluator.class
+ed\inf\adbs\lightdb\statements\Operators\ProjectOperator.class
+ed\inf\adbs\lightdb\statements\Operators\SortOperator$1.class
+ed\inf\adbs\lightdb\statements\Operators\SumOperator.class
+ed\inf\adbs\lightdb\statements\Operators\Operator.class
+ed\inf\adbs\lightdb\catalog\DatabaseCatalog$TableSchema.class
+ed\inf\adbs\lightdb\catalog\DatabaseCatalog.class
+ed\inf\adbs\lightdb\statements\Operators\ScanOperator.class
+ed\inf\adbs\lightdb\statements\SelectStatement.class
+ed\inf\adbs\lightdb\models\Tuple.class
+ed\inf\adbs\lightdb\statements\Operators\JoinOperator.class
+ed\inf\adbs\lightdb\statements\Evaluators\SelectExpressionEvaluator.class

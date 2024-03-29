@@ -1,0 +1,14 @@
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\models\Tuple.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Evaluators\SelectExpressionEvaluator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\ScanOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Evaluators\JoinExpressionEvaluator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\catalog\DatabaseCatalog.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\Operator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\SortOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\JoinOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\SumOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\SelectOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\LightDB.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\DuplicateEliminationOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\Operators\ProjectOperator.java
+D:\MS\Adbms\B242552\LightDB\src\main\java\ed\inf\adbs\lightdb\statements\SelectStatement.java
