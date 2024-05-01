@@ -82,6 +82,8 @@ public class SelectStatement {
             this.selectConditionsMap.put(table,joinWhereExpression(whereSelectOnly.get(table)));
             this.joinConditionsMap.put(table,joinWhereExpression(whereJoinOnly.get(table)));
         }
+        System.out.println(this.selectConditionsMap);
+        System.out.println(this.joinConditionsMap);
 
         String lastSelectItem=this.selectItems.get(this.selectItems.size()-1).toString();
         if(lastSelectItem.contains("SUM")){
@@ -184,11 +186,13 @@ public class SelectStatement {
         String right=splitExpression[2];
         //check if left side of operator is a table
         if(left.contains(".")){
+            left=left.split("\\.")[0];
             tablesInvolved.add(left);
         }
         //check if right side of operator is a table
         if(right.contains(".")){
             //if the join is a self join skip adding the same table again
+            right=right.split("\\.")[0];
             if(!tablesInvolved.contains(right)){
                 tablesInvolved.add(right);
             }

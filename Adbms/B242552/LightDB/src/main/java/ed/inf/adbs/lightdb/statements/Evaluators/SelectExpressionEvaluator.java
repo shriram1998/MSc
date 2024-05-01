@@ -45,12 +45,15 @@ public class SelectExpressionEvaluator extends ExpressionDeParser{
     public void visit(Column column) {
         super.visit(column);
         int index = DatabaseCatalog.getColumnPosition(column.toString());
+        System.out.println(column);
+        System.out.println(index);
         this.lastValueStack.push(this.tuple.getTupleField(index));
     }
 
     @Override
     public void visit(LongValue longValue) {
         super.visit(longValue);
+        System.out.println(longValue);
         this.lastValueStack.push((int) longValue.getValue());
     }
 

@@ -5,42 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b28aeba0-f8b7-4791-a03b-9f2c51cfe56f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/DuplicateEliminationOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/SumOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query6.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/LightDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/LightDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/catalog/DatabaseCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/catalog/DatabaseCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/models/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/models/Tuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Evaluators/JoinExpressionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Evaluators/JoinExpressionEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Evaluators/SelectExpressionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Evaluators/SelectExpressionEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/JoinOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/JoinOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/Operator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/ProjectOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/ProjectOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/ScanOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/ScanOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/SelectOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/SelectOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/SortOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/Operators/SortOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/SelectStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/main/java/ed/inf/adbs/lightdb/statements/SelectStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/test/java/ed/inf/adbs/lightdb/LightDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/src/test/java/ed/inf/adbs/lightdb/LightDBTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/LightDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/LightDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/catalog/DatabaseCatalog$TableSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/catalog/DatabaseCatalog$TableSchema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/catalog/DatabaseCatalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/catalog/DatabaseCatalog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/models/Tuple.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/models/Tuple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Evaluators/JoinExpressionEvaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Evaluators/JoinExpressionEvaluator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Evaluators/SelectExpressionEvaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Evaluators/SelectExpressionEvaluator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/JoinOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/JoinOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/Operator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/ProjectOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/ProjectOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/ScanOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/ScanOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/SelectOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/Operators/SelectOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/SelectStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/classes/ed/inf/adbs/lightdb/statements/SelectStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/test-classes/ed/inf/adbs/lightdb/LightDBTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/target/test-classes/ed/inf/adbs/lightdb/LightDBTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cw/CW1 - instructions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../cw/CW1 - instructions.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/input/query4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/samples/input/query4.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ed/inf/adbs/lightdb/statements/Evaluators/SelectExpressionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ed/inf/adbs/lightdb/statements/Evaluators/SelectExpressionEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ed/inf/adbs/lightdb/statements/SelectStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ed/inf/adbs/lightdb/statements/SelectStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/input/query13.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/input/query13.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query13.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query13.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../CW1 - code/LightDB/samples/output/query3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cw/CW1 - code/LightDB-ADBS" beforeDir="false" afterPath="$PROJECT_DIR$/../../cw/CW1 - code/LightDB-ADBS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/configfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/src/main/java/com/acp/cw2/Cw2Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/src/main/java/com/acp/cw2/controller/ApiExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/src/main/java/com/acp/cw2/controller/CoreRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/cw2/cw2/src/test/java/com/acp/cw2/Cw2ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acp/cw2/playground/AcpKafkaProducer" beforeDir="false" afterPath="$PROJECT_DIR$/../../../acp/cw2/playground/AcpKafkaProducer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../anlp/course_materials" beforeDir="false" afterPath="$PROJECT_DIR$/../../../anlp/course_materials" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/1117_robust_active_distillation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/A Comparative Survey of Deep Active Learning.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/A Survey of Active Learning for Natural Language Processing.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/A Survey of Deep Active Learning.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/Active learning for data streams a survey.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/Cache and Distil.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/Cache me if you can.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/CoreSet.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/Distilling the Knowledge in a Neural Network.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/Green AI.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/LoRA.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/On Optimal Caching and Model Multiplexing for Large Model.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ipp/Settles AL.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mlp/mlp-cw2/mlpractical" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mlp/mlp-cw2/mlpractical" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../mlp/mlp=cw1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../mlp/mlp=cw1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +52,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2eIeGvW5W8Zo86xr0yqyraVuTFC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -60,15 +62,32 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.LightDB.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "JUnit.LightDBTest.executor": "Run",
     "Maven.lightdb [test].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="LightDB" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ed.inf.adbs.lightdb.LightDB" />
+      <module name="lightdb" />
+      <option name="PROGRAM_PARAMETERS" value="samples/db samples/input/query13.sql samples/output/query13.csv" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,6 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711596428981</updated>
       <workItem from="1711596432329" duration="51000" />
+      <workItem from="1713531020833" duration="1979000" />
     </task>
     <servers />
   </component>

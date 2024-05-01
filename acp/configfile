@@ -1,0 +1,20 @@
+# bootstrap.servers=localhost:9092
+bootstrap.servers=pkc-l6wr6.europe-west2.gcp.confluent.cloud:9092
+
+security.protocol=SASL_SSL
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='WETVZSV7HG3F5R6S' password='sOxKkE5haw4txluOn1pkYy769EM5xmHZDKXIKmYvQzoveIEDnYReM+Q6xHO3PmtQ';
+sasl.mechanism=PLAIN
+
+# Required for correctness in Apache Kafka clients prior to 2.6
+client.dns.lookup=use_all_dns_ips
+
+max.block.ms=7000
+# Best practice for Kafka producer to prevent data loss
+acks=all
+key.serializer=org.apache.kafka.common.serialization.StringSerializer
+value.serializer=org.apache.kafka.common.serialization.StringSerializer
+key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+
+#storage server
+storage.server=https://acp-storage.azurewebsites.net/
